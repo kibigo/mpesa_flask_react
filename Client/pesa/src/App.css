@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+}
+
+.mpesaPage{
+  background-color: bisque;
+  height: 50vh;
+  width: 50%;
+  margin: auto;
+}
+
+.mpesaForm{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mpesaForm input{
+  width: 60%;
+  height: 25px;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-indent: 10px;
+  background-color: white;
+}
+
+.mpesaForm button{
+  width: 40%;
+  margin: auto;
+  height: 25px;
+  background-color: cadetblue;
+  color: blue;
+}
+
