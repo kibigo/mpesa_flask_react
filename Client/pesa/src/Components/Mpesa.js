@@ -27,7 +27,7 @@ function Mpesa() {
         })
         .then((response) => {
             setLoading(false)
-
+            console.log(formData)
 
             if (response.ok){
                 window.alert('Payment made')

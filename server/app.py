@@ -66,9 +66,9 @@ class Make_Payment(Resource):
             "Timestamp": timestamp, # timestamp format: 20190317202903 yyyyMMhhmmss 
             "TransactionType": "CustomerPayBillOnline",
             "Amount": amount,
-            "PartyA": phone_number,
+            "PartyA": f"254{phone_number[1:]}",
             "PartyB": bussiness_shortcode,
-            "PhoneNumber": "254741103848",
+            "PhoneNumber": f"254{phone_number[1:]}",
             "CallBackURL": "https://mydomain.com/pat",
             "AccountReference": "Limited",
             "TransactionDesc": "Payment of Jackson"
@@ -99,7 +99,17 @@ class Make_Payment(Resource):
                 jsonify(message)
             )
 
+            new_data = Payment(
+                number = phone_number,
+                amount = amount
+            )
+
+            db.session.add(new_data)
+            db.session.commit()
+
             return response
+        
+        
 
 api.add_resource(Make_Payment, '/payment')
 
